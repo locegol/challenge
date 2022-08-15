@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-12">
+        <div class="row">   
+            <div class="col-12">
+                <h1>Detalle Agencia</h1>
+            </div>
+        </div>
+        <div class="row">   
+            <div class="col-12">
+                <form #form="ngForm" (ngSubmit)="addAgency()">
+                    <div class="row form-group">
+                        <div class="col-md-6 col-12 form-group">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" 
+                                id="name" name="name" placeholder="input text" 
+                                #name="ngModel" [(ngModel)]="agency.agencia"
+                                [ngClass]="{
+                                    'is-valid': name.dirty && !name.errors,
+                                    'is-invalid': name.dirty && name.errors
+                                }" 
+                                >
+                                <label for="name">Nombre de Agencia</label>
+                                <div class="valid-feedback">
+                                    <span>¡Correcto!</span>
+                                  </div>
+                                  <div class="invalid-feedback">
+                                    <span *ngIf="name.errors?.['required']">Valor requerido</span>
+                                    <span *ngIf="name.errors?.['minlength']">Se necesitan minimo {{name.errors?.['minlength'].requiredLength}} caracteres y llevas {{name.errors?.['minlength'].actualLength}} caracteres</span>
+                                  </div>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="input text" #direccion="ngModel" [(ngModel)]="agency.direccion">
+                                <label for="direccion">Direccion</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="distrito" name="distrito" placeholder="input text" #distrito="ngModel" [(ngModel)]="agency.distrito">
+                                <label for="distrito">Distrito</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="latitud" name="latitud" placeholder="input text" #latitud="ngModel" [(ngModel)]="agency.lat">
+                                <label for="latitud">Latitud</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="longitud" name="longitud" placeholder="input text" #longitud="ngModel" [(ngModel)]="agency.lon">
+                                <label for="logitud">Longitud</label>
+                              </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="co-12">
+                            <button type="submit"class="btn btn-primary" (click)="addOrEdit()">
+                                Actualizar
+                            </button>
+            
+                        </div>
+            
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>

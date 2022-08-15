@@ -1,0 +1,28 @@
+
+
+<div *ngIf="!load">
+    <div class="spinner">
+        <img  src="assets/img/bcp.png" alt="">
+    </div>
+</div>
+<div *ngIf="load">
+    <div class="row" id="schedule">
+        <div class="menu col-md-1 col-12">
+            <div class="row">
+                <div class="menu-item col-md-12 col-6" [routerLink] ="['list-agency']" >
+                    <img class="img-fluid list-group-item list-group-item-action"  src="assets/img/homa.png" alt="">
+                </div>
+                <div class="menu-item col-md-12 col-6" [routerLink] ="['add-agency']">
+                    <img class="img-fluid list-group-item list-group-item-action"  src="assets/img/mas.png" alt="">
+    
+                </div>
+            </div>
+    
+        </div>
+        <div class="content col-md-11 col-12 h-100">
+            <router-outlet></router-outlet>
+        </div>
+    
+    </div>
+
+</div>
